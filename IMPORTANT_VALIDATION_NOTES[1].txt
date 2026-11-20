@@ -1,0 +1,15 @@
+VALIDATION NOTES
+1. Notebook output head: Dense(39, activation='sigmoid'); loss: SparseCategoricalCrossentropy.
+   For mutually exclusive multiclass classification softmax is conventional. Original
+   notebook metrics are preserved; corrected activation requires retraining.
+2. Source directory is already named Plant_leave_diseases_dataset_with_augmentation.
+   Random file-level splitting occurs after download. If derivatives of one source
+   photograph cross splits, leakage is possible, but the notebook does not prove it.
+3. No full test confusion matrix, class-wise precision/recall/F1, or class support output
+   is present. None is fabricated in this package.
+4. Printed prediction batch has 32 samples; one predicted index differs from its label.
+   This illustrative batch is not a substitute for the overall test evaluation.
+5. Dataset includes Background_without_leaves: the task is 39-way image category
+   classification including a background class.
+6. Reconstructed curves use the exact epoch metrics printed in notebook logs. Original
+   embedded PNGs are also included under figures/.
